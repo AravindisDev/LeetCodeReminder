@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: leetcode-daily-reminder
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    healthCheckPath: /health
+    envVars:
+      - key: TIMEZONE
+        value: Asia/Kolkata
+      - key: PYTHON_VERSION
+        value: 3.12.0
